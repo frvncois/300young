@@ -13,7 +13,7 @@ import CoworkingIcon from "@/components/icons/CoworkingIcon";
 import ElectricIcon from "@/components/icons/ElectricIcon";
 import InternetIcon from "@/components/icons/InternetIcon";
 import Ets from "@/public/assets/ets.png";
-import Image from 'next/image';
+import Image from "next/image"; 
 
 import Link from "next/link";
 

@@ -45,7 +45,7 @@ const ContactUsForm = ({ setIsSuccess }) => {
 
   function handleDropdown() {
     if (!openDropdown) {
-      const menuElement = document.querySelector('.menu');
+      const menuElement = document.querySelector(".menu");
       // Get the actual height of the menu
       const menuHeight = menuElement.scrollHeight;
       
@@ -57,7 +57,7 @@ const ContactUsForm = ({ setIsSuccess }) => {
       );
       setOpenDropdown(true);
     } else {
-      const menuElement = document.querySelector('.menu');
+      const menuElement = document.querySelector(".menu");
       const menuHeight = menuElement.scrollHeight;
       
       gsap.fromTo(".caret", { rotation: -180 }, { rotation: 0 });

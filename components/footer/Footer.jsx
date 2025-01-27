@@ -3,6 +3,9 @@ import YoungLogo from "@/components/icons/YoungLogo";
 import Image from "next/image";
 import ScrollUpButton from "./ScrollUpButton";
 import Link from "next/link";
+import FacebookIcon from "../icons/FacebookIcon";
+import InstagramIcon from "../icons/InstagramIcon";
+
 import { useAtom } from "jotai";
 import {
   locationLifeStyleInData,
@@ -17,7 +20,6 @@ const Footer = () => {
     { name: "Location", link: "/#location-life-style" },
     { name: "Lifestyle", link: "/#location-life-style" },
     { name: "Contact", link: "/#contact-us" },
-    { name: "Blog", link: "/#blogs" },
     { name: "Privacy policy", link: "/privacy-policiy" },
   ];
 
@@ -63,12 +65,14 @@ const Footer = () => {
           <div className="hidden w-full md:grid grid-cols-3 md:grid-cols-4 gap-10 text-sm md:text-base">
           <div className="flex flex-col gap-10 justify-between">
               <div className="flex flex-col gap-1 justify-center items-start">
-              <p>Tel. +(438)-256-7005</p>
-              <p>300 Rue Young<br/>
+              <p className="pb-4">Tel. +(438)-256-7005</p>
+              <p className="pb-4">300 Rue Young<br/>
               Montréal, QC H3C 2G2</p>
-              <p>Courriel</p>
+              <p className="pb-4">Courriel</p>
               </div>
-              FB IG
+              <div className="flex">
+              <FacebookIcon/> <InstagramIcon/>
+              </div>
             </div>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-1 justify-center items-start">

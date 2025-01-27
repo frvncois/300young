@@ -3,50 +3,82 @@ import BasketIcon from "@/public/icons/BasketIcon";
 import BicycleIcon from "@/public/icons/BicycleIcon";
 import ChairIcon from "@/public/icons/ChairIcon";
 import CommuteIcon from "@/public/icons/CommuteIcon";
-import DishwasherIcon from "@/public/icons/DishwasherIcon";
 import FireplaceIcon from "@/public/icons/FireplaceIcon";
 import TreeIcon from "@/public/icons/TreeIcon";
 import WalkIcon from "@/public/icons/WalkIcon";
+import WifiIcon from "@/components/icons/WifiIcon";
+import PackageIcon from "@/components/icons/PackageIcon";
+import WashingIcon from "@/components/icons/WashingIcon";
+import CoworkingIcon from "@/components/icons/CoworkingIcon";
+import ElectricIcon from "@/components/icons/ElectricIcon";
+import InternetIcon from "@/components/icons/InternetIcon";
+import Ets from "@/public/assets/ets.png";
+import Image from 'next/image';
+
 import Link from "next/link";
 
 const aminitiesAdvantagesList = [
   {
-    icon: <BicycleIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <BicycleIcon className="w-5 md:w-[35px] h-auto" />,
     title: "68 bicycle parking spaces",
   },
   {
-    icon: <ChairIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <ChairIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Semi-furnished units",
   },
   {
-    icon: <FireplaceIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <FireplaceIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Ground floor common room",
   },
   {
-    icon: <BalconyIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <WifiIcon className="w-5 md:w-[35px] h-auto" />,
+    title: "Wifi haute-vitesse",
+  },
+  {
+    icon: <PackageIcon className="w-5 md:w-[35px] h-auto" />,
+    title: "Casiers intelligents",
+  },
+  {
+    icon: <BalconyIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Majority of units with balcony",
   },
   {
-    icon: <DishwasherIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <WashingIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Laundry area",
+  },
+  {
+    icon: <CoworkingIcon className="w-5 md:w-[35px] h-auto" />,
+    title: "Espaces de coworking",
+  },
+  {
+    icon: <ElectricIcon className="w-5 md:w-[35px] h-auto" />,
+    title: "Électricité incluse",
+  },
+  {
+    icon: <InternetIcon className="w-5 md:w-[35px] h-auto" />,
+    title: "Internet optionnel",
   },
 ];
 
 const nearbyList = [
   {
-    icon: <WalkIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <WalkIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Lachine Canal",
   },
   {
-    icon: <CommuteIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <CommuteIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Public transportation",
   },
   {
-    icon: <BasketIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <Image src={Ets} alt="ETS" className="w-5 md:w-[35px] h-auto" />,
+    title: "ÉTS (École de Technologie Supérieure)",
+  },
+  {
+    icon: <BasketIcon className="w-5 md:w-[35px] h-auto" />,
     title: "A variety of services, leisure activities, and restaurants",
   },
   {
-    icon: <TreeIcon className="w-5 md:w-[50px] h-auto" />,
+    icon: <TreeIcon className="w-5 md:w-[35px] h-auto" />,
     title: "Parks and green spaces",
   },
 ];
@@ -67,10 +99,10 @@ const Aminities = () => {
             <h2 className="w-full font-semibold text-lg lg:text-2xl leading-9 uppercase border-b-2 border-[#24211E]">
               Our Advantages
             </h2>
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 text-sm lg:text-[22px] leading-[100%] gap-y-3">
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 text-sm lg:text-[16px] leading-[100%] gap-y-3">
               <div className="space-y-3 md:space-y-5">
                 {aminitiesAdvantagesList.map((item, index) => {
-                  if (index < 3) {
+                  if (index < 5) {
                     return (
                       <div key={index} className="flex items-center gap-4">
                         <span>{item.icon}</span>
@@ -83,7 +115,7 @@ const Aminities = () => {
               </div>
               <div className="space-y-3 md:space-y-5">
                 {aminitiesAdvantagesList.map((item, index) => {
-                  if (index > 2) {
+                  if (index > 4) {
                     return (
                       <div key={index} className="flex items-center gap-4">
                         <span>{item.icon}</span>
@@ -99,10 +131,10 @@ const Aminities = () => {
             <h2 className="mt-12 w-full font-semibold text-lg lg:text-2xl leading-9 uppercase border-b-2 border-[#24211E]">
               Nearby
             </h2>
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 text-sm lg:text-[22px] leading-[100%] gap-y-3">
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-2 text-sm lg:text-[16px] leading-[100%] gap-y-3">
               <div className="space-y-3 md:space-y-5">
                 {nearbyList.map((item, index) => {
-                  if (index < 2) {
+                  if (index < 3) {
                     return (
                       <div key={index} className="flex items-center gap-4">
                         <span>{item.icon}</span>
@@ -115,7 +147,7 @@ const Aminities = () => {
               </div>
               <div className="space-y-3 md:space-y-5">
                 {nearbyList.map((item, index) => {
-                  if (index > 1) {
+                  if (index > 2) {
                     return (
                       <div key={index} className="flex items-center gap-4">
                         <span>{item.icon}</span>

@@ -24,7 +24,7 @@ const ContactUsForm = ({ setIsSuccess }) => {
   const [unitList, setUnitList] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [budget, setBudget] = useState(null);
+  const [size, setSize] = useState(null);
 
   const handleCommunicate = () => {
     setIsCommunicate(!isCommunicate);
@@ -45,15 +45,25 @@ const ContactUsForm = ({ setIsSuccess }) => {
 
   function handleDropdown() {
     if (!openDropdown) {
+      const menuElement = document.querySelector('.menu');
+      // Get the actual height of the menu
+      const menuHeight = menuElement.scrollHeight;
+      
       gsap.fromTo(".caret", { rotation: 0 }, { rotation: -180 });
       gsap.set(".menu", { opacity: 1 });
-      gsap.fromTo(".menu", { height: 0 }, { height: 145 });
+      gsap.fromTo(".menu", 
+        { height: 0 }, 
+        { height: menuHeight }
+      );
       setOpenDropdown(true);
     } else {
+      const menuElement = document.querySelector('.menu');
+      const menuHeight = menuElement.scrollHeight;
+      
       gsap.fromTo(".caret", { rotation: -180 }, { rotation: 0 });
       gsap.fromTo(
         ".menu",
-        { height: 145 },
+        { height: menuHeight },
         { height: 0, onComplete: () => gsap.set(".menu", { opacity: 0 }) }
       );
       setOpenDropdown(false);
@@ -76,11 +86,11 @@ const ContactUsForm = ({ setIsSuccess }) => {
       {({ errors, touched }) => (
         <Form className="w-full">
           <label htmlFor="name" className="block text-sm text-[#8C682F]">
-            * Last Name
+            Last Name
           </label>
           <div className="mt-2">
             <Field
-              className="w-full p-3 bg-[#E8E1CF] text-[#6C6042] placeholder:text-[#6C6042] rounded-bl-lg rounded-tr-lg"
+              className="w-full p-3 bg-[#F2F2F2E5] border order-[#BDBDBD] text-[#6C6042] placeholder:text-[#6C6042] rounded-lg"
               name="name"
               type="text"
               autoComplete="name"
@@ -97,11 +107,11 @@ const ContactUsForm = ({ setIsSuccess }) => {
             htmlFor="firstName"
             className="block mt-3 text-sm text-[#8C682F]"
           >
-            * First Name
+            First Name
           </label>
           <div className="mt-2">
             <Field
-              className="w-full p-3 bg-[#E8E1CF] text-[#6C6042] placeholder:text-[#6C6042] rounded-bl-lg rounded-tr-lg border border-[#E8E1CF] border-opacity-50"
+                 className="w-full p-3 bg-[#F2F2F2E5] border order-[#BDBDBD] text-[#6C6042] placeholder:text-[#6C6042] rounded-lg"
               name="firstName"
               type="text"
               autoComplete="firstName"
@@ -115,11 +125,11 @@ const ContactUsForm = ({ setIsSuccess }) => {
           ) : null}
 
           <label htmlFor="email" className="block mt-3 text-sm text-[#8C682F]">
-            * Email
+            Email
           </label>
           <div className="mt-2">
             <Field
-              className="w-full p-3 bg-[#E8E1CF] text-[#6C6042] placeholder:text-[#6C6042] rounded-bl-lg rounded-tr-lg border border-[#E8E1CF] border-opacity-50"
+              className="w-full p-3 bg-[#F2F2F2E5] border order-[#BDBDBD] text-[#6C6042] placeholder:text-[#6C6042] rounded-lg"
               name="email"
               type="email"
               autoComplete="email"
@@ -137,7 +147,7 @@ const ContactUsForm = ({ setIsSuccess }) => {
           </label>
           <div className="mt-2">
             <Field
-              className="w-full p-3 bg-transparent text-[#6C6042] placeholder:text-[#6C6042] rounded-bl-lg rounded-tr-lg border border-[#E8E1CF]"
+              className="w-full p-3 bg-[#F2F2F2E5] border order-[#BDBDBD] text-[#6C6042] placeholder:text-[#6C6042] rounded-lg"
               name="phone"
               type="text"
               autoComplete="phone"
@@ -154,13 +164,13 @@ const ContactUsForm = ({ setIsSuccess }) => {
             htmlFor="firstName"
             className="block mt-3 text-sm text-[#8C682F]"
           >
-            * Budget
+            Superficie recherchée
           </label>
           <div
-            className="mt-2 relative flex justify-between cursor-pointer w-full p-3 bg-[#E8E1CF] text-[#6C6042] rounded-bl-lg rounded-tr-lg border border-[#E8E1CF]"
+            className="w-full justify-between flex p-3 bg-[#F2F2F2E5] border order-[#BDBDBD] text-[#6C6042] placeholder:text-[#6C6042] rounded-lg"
             onClick={() => handleDropdown()}
           >
-            {!budget ? "0000$ - 0000$" : budget}
+            {!size ? "Studio" : size}
             <span>
               <ChevronDownIcon className="caret w-5 max-h-5" />
             </span>
@@ -168,117 +178,57 @@ const ContactUsForm = ({ setIsSuccess }) => {
 
           <div className="relative w-full">
             <ul className="menu absolute opacity-0 left-0 top-0 z-40 w-full h-0 overflow-hidden text-[#6C6042] bg-white rounded-lg border border-[#E8E1CF]">
+            <li
+                className={cn(
+                  "p-3 hover:text-white hover:bg-[#6C6042] border-b border-b-[#6C6042] cursor-pointer",
+                  size === "Studio" && "text-white bg-[#6C6042]"
+                )}
+                onClick={() => setSize("Studio")}
+              >
+                Studio
+              </li>
               <li
                 className={cn(
                   "p-3 hover:text-white hover:bg-[#6C6042] border-b border-b-[#6C6042] cursor-pointer",
-                  budget === "1000$ - 2000$" && "text-white bg-[#6C6042]"
+                  size === "3 1/2" && "text-white bg-[#6C6042]"
                 )}
-                onClick={() => setBudget("1000$ - 2000$")}
+                onClick={() => setSize("3 1/2")}
               >
-                1000$ - 2000$
+                3 ½
               </li>
               <li
                 className={cn(
                   "p-3 hover:text-white hover:bg-[#6C6042] border-b border-b-[#6C6042] cursor-pointer",
-                  budget === "3000$ - 4000$" && "text-white bg-[#6C6042]"
+                  size === "4 1/2" && "text-white bg-[#6C6042]"
                 )}
-                onClick={() => setBudget("3000$ - 4000$")}
+                onClick={() => setSize("4 1/2")}
               >
-                3000$ - 4000$
+                4 ½
               </li>
               <li
-                className={cn(
-                  "p-3 hover:text-white hover:bg-[#6C6042] cursor-pointer",
-                  budget === "4000$ - 5000$" && "text-white bg-[#6C6042]"
-                )}
-                onClick={() => setBudget("4000$ - 5000$")}
-              >
-                4000$ - 5000$
-              </li>
+      className={cn(
+        "p-3 hover:text-white hover:bg-[#6C6042] border-b border-b-[#6C6042] cursor-pointer",
+        size === "5 1/2" && "text-white bg-[#6C6042]" // Corrected condition
+      )}
+      onClick={() => setSize("5 1/2")} // Corrected value
+    >
+      5 ½
+    </li>
             </ul>
           </div>
 
-          {!budget && isSubmitted && (
+          {!size && isSubmitted && (
             <span className="mt-2 text-[#EF4A3C] text-[13px] leading-[16px]">
-              Please select a desired budget.
+              Please select a desired size.
             </span>
           )}
 
-          <label htmlFor="unit" className="block mt-3 text-sm text-[#8C682F]">
-            * Desired Unit
-          </label>
-          <div className="mt-2 space-x-1 flex items-center text-[#24211E]">
-            <div
-              className="p-3 flex items-center gap-3 cursor-pointer"
-              onClick={() => handleUnitList("Studio")}
-            >
-              <div className="w-4 h-4 border border-[#24211E] flex justify-normal items-center">
-                {unitList.includes("Studio") && (
-                  <CheckIcon className="w-3.5 h-3.5" />
-                )}
-              </div>{" "}
-              Studio
-            </div>
-            <div
-              className="p-3 flex items-center gap-3 cursor-pointer"
-              onClick={() => handleUnitList("3½")}
-            >
-              <div className="w-4 h-4 border border-[#24211E] flex justify-normal items-center">
-                {unitList.includes("3½") && (
-                  <CheckIcon className="w-3.5 h-3.5" />
-                )}
-              </div>{" "}
-              3½
-            </div>
-            <div
-              className="p-3 flex items-center gap-3 cursor-pointer"
-              onClick={() => handleUnitList("4½")}
-            >
-              <div className="w-4 h-4 border border-[#24211E] flex justify-normal items-center">
-                {unitList.includes("4½") && (
-                  <CheckIcon className="w-3.5 h-3.5" />
-                )}
-              </div>{" "}
-              4½
-            </div>
-            <div
-              className="p-3 flex items-center gap-3 cursor-pointer"
-              onClick={() => handleUnitList("5½")}
-            >
-              <div className="w-4 h-4 border border-[#24211E] flex justify-normal items-center">
-                {unitList.includes("5½") && (
-                  <CheckIcon className="w-3.5 h-3.5" />
-                )}
-              </div>{" "}
-              5½
-            </div>
-          </div>
-          {unitList.length === 0 && isSubmitted && (
-            <span className="mt-2 text-[#EF4A3C] text-[13px] leading-[16px]">
-              Please select a desired unit.
-            </span>
-          )}
-
-          <label
-            htmlFor="message"
-            className="block mt-3 text-sm text-[#8C682F]"
-          >
-            Message
-          </label>
-          <div className="mt-2">
-            <Field
-              as="textarea"
-              className="w-full p-3 bg-[#E8E1CF] text-[#6C6042] placeholder:text-[#6C6042] rounded-bl-lg rounded-tr-lg border border-[#E8E1CF] border-opacity-50"
-              name="message"
-              placeholder="Allô..."
-            />
-          </div>
 
           <label
             htmlFor="communication"
             className="block mt-3 text-sm text-[#8C682F]"
           >
-            * Communication
+            Consentement
           </label>
           <div className="mt-2 flex items-start gap-2 text-[#24211E]">
             <div
@@ -303,14 +253,7 @@ const ContactUsForm = ({ setIsSuccess }) => {
               Please accept the T&Cs.
             </span>
           )}
-
-          <label
-            htmlFor="communication"
-            className="block my-5 text-sm text-[#24211E]"
-          >
-            * Required Fields
-          </label>
-
+          <div className="pt-8 ">
           <button
             type="submit"
             onClick={() => setIsSubmitted(true)}
@@ -318,6 +261,7 @@ const ContactUsForm = ({ setIsSuccess }) => {
           >
             Sign me up
           </button>
+          </div>
         </Form>
       )}
     </Formik>

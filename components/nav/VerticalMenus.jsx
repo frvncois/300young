@@ -51,13 +51,6 @@ const VerticalMenus = ({
       >
         Contact
       </Link>
-      <Link
-        href="/#blogs"
-        onClick={onClose}
-        className="vertical-menu min-w-[220px] bg-[#24211E] rounded-[20px] rounded-t text-white py-4 px-12"
-      >
-        Blog
-      </Link>
       <div className="vertical-menu min-w-[220px] bg-[#E8E1CF] rounded-[20px] rounded-b text-white py-4 px-12">
         <LangSwitch />
       </div>

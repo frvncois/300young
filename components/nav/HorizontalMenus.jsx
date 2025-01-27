@@ -42,14 +42,6 @@ const HorizontalMenus = ({ locationClickHandler, lifeStyleClickHandler }) => {
       >
         Contact
       </Link>
-      <Link
-        href="/#blogs"
-        className="horizontal-menu hidden relative 2xl:flex items-center justify-center text-white"
-      >
-        <span className="absolute">Blog</span>
-        <div className="-mr-1.5 h-24 w-14 rounded-full rounded-l bg-[#24211E]"></div>
-        <div className="-ml-1.5 h-24 w-14 rounded-full rounded-r bg-[#24211E]"></div>
-      </Link>
 
       <div className="horizontal-menu hidden bg-[#E8E1CF] h-24 w-24 rounded-full 2xl:flex items-center justify-center">
         <LangSwitch />

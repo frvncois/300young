@@ -50,10 +50,9 @@ function HeroSection() {
         height="342"
       />
       <div className="md:hidden absolute -z-10 top-[70px] right-0 h-[97px] w-12 rounded-l-full border border-black2 opacity-10"></div>
-
-      <div className="container 2xl:pl-[250px] pt-[30dvh] md:pt-0 w-full min-h-dvh md:flex flex-col justify-center gap-4">
+      <div className="container p-4 md:px-40 2xl:pl-64 pt-[30dvh] md:pt-0 w-full min-h-dvh md:flex flex-col justify-center gap-4">
         <h1 className="text-[34px] lg:text-[90px] leading-[120%] font-bold uppercase">
-          Come and live in Montreal’s <br /> trendiest neighborhood
+          Come and live in Montreal’s trendiest neighborhood
         </h1>
         <Link
           href="/#contact-us"

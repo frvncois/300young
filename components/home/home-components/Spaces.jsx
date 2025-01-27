@@ -25,7 +25,7 @@ function Spaces() {
       >
         {spacesDataContent?.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative lg:max-h-[1143px] sm:h-screen h-[954px] w-full bg-cover bg-no-repeat bg-center">
+          <div className="relative h-[50vh] sm:h-screen lg:max-h-[1143px] w-full bg-cover bg-no-repeat bg-center">
               <Image
                 src={item.image}
                 alt={item.title}
@@ -34,15 +34,15 @@ function Spaces() {
                 className="w-full h-full object-cover object-left-top"
               />
               <div
-                className={`absolute bottom-0 lg:right-[120px] lg:w-8/12 w-11/12 lg:-translate-x-1/3 left-1/2 -translate-x-1/2 max-w-[1367px] 2xl:px-[130px] px-5 lg:pt-[115px] sm:pt-[150px] pt-[80px] 2xl:pb-[90px] pb-[50px] opacity-85 ${item.shape}`}
+                className={`hidden md:block absolute bottom-0 lg:right-[120px] lg:w-4/12 w-11/12 left-1/4 -translate-x-1/2 max-w-[1367px] 2xl:px-[130px] lg:pt-[115px] sm:pt-[150px] pt-[80px] 2xl:pb-[90px] pb-[50px] opacity-85 ${item.shape}`}
                 style={{ backgroundColor: item.bgColor }}
               >
                 <div className="relative">
                   <div className="sm:px-[60px] px-5">
-                    <h2 className="sm:text-[66px] sm:leading-[84px] text-[30px] leading-[38px] font-bold uppercase lg:mb-[30px] mb-5">
+                    <h2 className="sm:text-[30x] sm:leading-[40px] text-[30px] leading-[38px] font-bold uppercase lg:mb-[30px] mb-5">
                       {item.title}
                     </h2>
-                    <p className="sm:text-[22px] sm:leading-[33px] text-[12px] leading-[18px] font-normal">
+                    <p className="sm:text-[16px] sm:leading-[25px] text-[12px] leading-[18px] font-normal">
                       {item.text}
                     </p>
                   </div>
@@ -53,7 +53,7 @@ function Spaces() {
                         <ArrowLeftIcon className="h-6 w-6" />
                       </div>
                     )}
-                    {item.id !== 2 && (
+                    {item.id !== 5 && (
                       <div className="swiper-button-next !h-auto unit-swiper-btn !text-black2">
                         <ArrowRightIcon className="h-6 w-6" />
                       </div>

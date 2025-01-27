@@ -30,14 +30,6 @@ const ContactUsForm = ({ setIsSuccess }) => {
     setIsCommunicate(!isCommunicate);
   };
 
-  const handleUnitList = (value) => {
-    if (unitList.includes(value)) {
-      setUnitList((prevList) => prevList.filter((item) => item !== value));
-    } else {
-      setUnitList((prevList) => [...prevList, value]);
-    }
-  };
-
   const onSubmit = (values) => {
     console.log(values);
     setIsSuccess(true);

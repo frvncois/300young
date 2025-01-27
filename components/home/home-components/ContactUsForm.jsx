@@ -21,7 +21,6 @@ const ValidationSchema = Yup.object().shape({
 
 const ContactUsForm = ({ setIsSuccess }) => {
   const [isCommunicate, setIsCommunicate] = useState(false);
-  const [unitList, setUnitList] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
   const [size, setSize] = useState(null);

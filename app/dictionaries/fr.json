@@ -1,0 +1,9 @@
+{
+  "navigation": {
+    "links": [
+      { "name": "Article", "href": "article", "offset": 0 },
+      { "name": "Home", "href": "", "offset": 150 },
+      { "name": "À propos de nous", "href": "à-propos-de-nous", "offset": 150 }
+    ]
+  }
+}

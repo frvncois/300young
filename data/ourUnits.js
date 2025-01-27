@@ -1,0 +1,117 @@
+export const unitsData = [
+  {
+    id: 1,
+    shape: "unit-1",
+    color: "unit-1-bg",
+    title: "Studio",
+    size: "Approximately 367 sq ft",
+    startingForm: "Starting from $XXX",
+    bannerImage: "/assets/unit-1.webp",
+    detailsInfo: {
+      images: [
+        "/assets/unit-detail-1.webp",
+        "/assets/unit-detail-2.webp",
+        "/assets/unit-detail-3.webp",
+        "/assets/unit-detail-4.webp",
+      ],
+      size: "Approximately 914 sq ft",
+      details:
+        "Charming studio for rent, ideal for one person, offering an elegant and functional space perfect for creating a cozy, intimate home.",
+      featureColor: "#354655",
+      features: [
+        { icon: "price", text: "Starting from $XXX" },
+        { icon: "room", text: "X rooms" },
+        { icon: "commonSpace", text: "Shared common spaces" },
+        { icon: "independentBathroom", text: "Independent bathroom" },
+        { icon: "furnished", text: "Furnished" },
+      ],
+    },
+  },
+  {
+    id: 2,
+    shape: "unit-2",
+    color: "unit-2-bg",
+    title: "3½",
+    size: "Approximately 419 pi",
+    sizeSquare: true,
+    startingForm: "Starting from $XXX",
+    bannerImage: "/assets/unit-2.webp",
+    detailsInfo: {
+      images: [
+        "/assets/unit-detail-2.webp",
+        "/assets/unit-detail-3.webp",
+        "/assets/unit-detail-4.webp",
+        "/assets/unit-detail-1.webp",
+      ],
+      size: "Approximately 419 sq ft",
+      details:
+        "Tristique aliquam odio tempus eu in gravida diam maecenas. Nibh nunc velit interdum pretium lorem. ",
+      featureColor: "#6C6042",
+      features: [
+        { icon: "price", text: "Starting from $XXX" },
+        { icon: "room", text: "X rooms" },
+        { icon: "commonSpace", text: "Shared common spaces" },
+        { icon: "independentBathroom", text: "Independent bathroom" },
+        { icon: "furnished", text: "Furnished" },
+      ],
+    },
+  },
+  {
+    id: 3,
+    shape: "unit-3",
+    color: "unit-3-bg",
+    title: "4½",
+    size: "Approximately 705 pi",
+    sizeSquare: true,
+    startingForm: "Starting from $XXX",
+    bannerImage: "/assets/unit-3.webp",
+    detailsInfo: {
+      images: [
+        "/assets/unit-detail-3.webp",
+        "/assets/unit-detail-4.webp",
+        "/assets/unit-detail-1.webp",
+        "/assets/unit-detail-2.webp",
+      ],
+      size: "Approximately 705 sq ft",
+      details:
+        "Tristique aliquam odio tempus eu in gravida diam maecenas. Nibh nunc velit interdum pretium lorem. ",
+      featureColor: "#36381E",
+      features: [
+        { icon: "price", text: "Starting from $XXX" },
+        { icon: "room", text: "X rooms" },
+        { icon: "commonSpace", text: "Shared common spaces" },
+        { icon: "independentBathroom", text: "Independent bathroom" },
+        { icon: "furnished", text: "Furnished" },
+      ],
+    },
+  },
+  {
+    id: 4,
+    shape: "unit-4",
+    color: "unit-4-bg",
+    title: "5½",
+    size: "Approximately 914 pi",
+    sizeSquare: true,
+    startingForm: "Starting from $XXX",
+    bannerImage: "/assets/unit-4.webp",
+    detailsInfo: {
+      images: [
+        "/assets/unit-detail-4.webp",
+        "/assets/unit-detail-1.webp",
+        "/assets/unit-detail-2.webp",
+        "/assets/unit-detail-3.webp",
+      ],
+      size: "Approximately 914 sq ft",
+      details:
+        "Tristique aliquam odio tempus eu in gravida diam maecenas. Nibh nunc velit interdum pretium lorem.",
+      featureColor: "#843F39",
+      features: [
+        { icon: "price", text: "Starting from $XXX" },
+        { icon: "room", text: "X rooms" },
+        { icon: "commonSpace", text: "Shared common spaces" },
+        { icon: "independentBathroom", text: "Independent bathroom" },
+        { icon: "furnished", text: "Furnished" },
+      ],
+    },
+  },
+];
